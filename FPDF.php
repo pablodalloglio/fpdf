@@ -420,7 +420,7 @@ class FPDF
         if (is_callable($this->headerCallback))
         {
             call_user_func( $this->headerCallback, $this->headerCallbackContext ? $this->headerCallbackContext : $this );
-            $this->headerCallbackContext->addRow();
+            $this->headerCallbackContext ? $this->headerCallbackContext->addRow() : null ;
         }
         //To be implemented in your own inherited class
     }
